@@ -66,14 +66,14 @@ export function Certifications({ isBlack }: CertificationsProps) {
                
                 <div className={`absolute left-0 top-0 h-full w-24 z-10 pointer-events-none
                     ${isBlack
-                        ? "bg-gradient-to-r from-black to-transparent"
-                        : "bg-gradient-to-r from-white to-transparent"}`} />
+                        ? "bg-linear-to-r from-black to-transparent"
+                        : "bg-linear-to-r from-white to-transparent"}`} />
 
 
                 <div className={`absolute right-0 top-0 h-full w-24 z-10 pointer-events-none
                     ${isBlack
-                        ? "bg-gradient-to-l from-black to-transparent"
-                        : "bg-gradient-to-l from-white to-transparent"}`} />
+                        ? "bg-linear-to-l from-black to-transparent"
+                        : "bg-linear-to-l from-white to-transparent"}`} />
 
                 <div
                     ref={trackRef}
@@ -87,7 +87,7 @@ export function Certifications({ isBlack }: CertificationsProps) {
                     {doubled.map((cert, index) => (
                         <div
                             key={index}
-                            className={`flex-shrink-0 w-64 rounded-2xl m-2  overflow-hidden border transition-all duration-200
+                            className={`shrink-0 w-64 rounded-2xl m-2  overflow-hidden border transition-all duration-200
                                 hover:scale-105 hover:cursor-pointer
                                 ${isBlack
                                     ? "bg-gray-950 border-gray-800"

@@ -5,9 +5,8 @@ import { Profile } from "../Components/UI/Profile";
 import { ProjectCard } from "../Components/UI/ProjectCard";
 import LinkShare from "../Components/Images/Link_share.png";
 import couseSeling from "../Components/Images/course-selling.png";
-import todoo from "../Components/Images/todo.jpg"
-import ProfilePhoto from "../Components/Images/Profile_photo.jpg"
-import { Contact } from "../Components/UI/contact";
+import todoo from "../Components/Images/todo.jpg";
+import { Contact } from "../Components/UI/Contact";
 
 import { Certifications } from "../Components/UI/Certification";
 import { Footer } from "../Components/UI/Footer";

@@ -22,8 +22,7 @@ export function Contact({ isBlack }: ContactProps) {
     async function handleClick(){
         try{
             const BaseURL = import.meta.env.VITE_BASE_URL;
-        const response = await axios.post(BaseURL+"/get-in-touch", {
-            
+            await axios.post(BaseURL+"/get-in-touch", { 
             name : formData.name,
             email : formData.email,
             content : formData.message

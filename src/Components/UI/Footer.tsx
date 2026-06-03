@@ -17,7 +17,7 @@ interface changeTheme{
 
 
 export function Footer( {isBlack}:  changeTheme){
-    const [visitor , setVisitor] = useState(0);
+    const [visitor] = useState(0);
 
     return(
         <div>

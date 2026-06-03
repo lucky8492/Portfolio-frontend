@@ -12,9 +12,7 @@ interface CardProps{
 
 
 export function ProjectCard( props : CardProps){
-    function handleClick(){
 
-    }
    return(
        <div>
             <div className={`md:flex ${props.isBlack ?"text-white":"text-black"
