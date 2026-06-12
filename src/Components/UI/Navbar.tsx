@@ -16,11 +16,11 @@ export function Navbar({ isWhiteBg, setIsWhiteBg }: NavbarProps) {
         <div className="w-full flex items-center justify-center pt-4 relative">
             {/* Desktop */}
             <div className="hidden sm:flex border-2 border-gray-500 p-2 rounded-xl">
-                <ul className={`flex gap-10 font-mono text-2xl ${isWhiteBg ? "bg-black text-white" : "bg-white text-black"}`}>
-                    <li className={`hover:cursor-pointer ${isWhiteBg ? "hover:text-gray-300" : "hover:text-gray-500"}`}><a href="#">Home</a></li>
-                    <li className={`hover:cursor-pointer ${isWhiteBg ? "hover:text-gray-300" : "hover:text-gray-500"}`}>About</li>
+                <ul className={`flex lg:gap-10 gap-6 lg:p-2  font-mono text-2xl ${isWhiteBg ? "bg-black text-white" : "bg-white text-black"}`}>
+                    <li className={`hover:cursor-pointer ${isWhiteBg ? "hover:text-gray-300" : "hover:text-gray-500"}`}><a href="#project">Projects</a></li>
+                    <li className={`hover:cursor-pointer ${isWhiteBg ? "hover:text-gray-300" : "hover:text-gray-500"}`}><a href="#certificate">Certificates</a></li>
                     <li className={`hover:cursor-pointer ${isWhiteBg ? "hover:text-gray-300" : "hover:text-gray-500"}`}><a href="/LUCKY_Mishra_r.pdf" download >Resume</a></li>
-                    <li className={`hover:cursor-pointer ${isWhiteBg ? "hover:text-gray-300" : "hover:text-gray-500"}`}><a href="#contact">Work</a></li>
+                    <li className={`hover:cursor-pointer ${isWhiteBg ? "hover:text-gray-300" : "hover:text-gray-500"}`}><a href="#contact">Contact</a></li>
                 </ul>
             </div>
 
@@ -38,16 +38,16 @@ export function Navbar({ isWhiteBg, setIsWhiteBg }: NavbarProps) {
                         <div onClick={() => setMenuOpen(false)} className="cursor-pointer self-end ">
                             <WrongIcon size="md" />
                         </div>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Resume</li>
-                        <li>Work</li>
+                        <li><a href="#project">Projects</a></li>
+                        <li><a href="#certificate">Certificates</a></li>
+                        <li><a href="/LUCKY_Mishra_r.pdf" download>Resume</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 )}
             </div>
 
             {/* Theme Toggle */}
-            <div onClick={() => setIsWhiteBg(!isWhiteBg)} className="absolute right-6 md:`mr-10 hover:cursor-pointer">
+            <div onClick={() => setIsWhiteBg(!isWhiteBg)} className="absolute right-6 md:mr-10 ml-10 hover:cursor-pointer">
                 {isWhiteBg ?
                     <img src={White} className="w-6 h-6" /> :
                     <img src={Black} className="w-6 h-6" />}

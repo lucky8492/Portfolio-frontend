@@ -1,5 +1,6 @@
 import { GoArrowUpRight } from "react-icons/go";
 import { FaGithub } from "react-icons/fa6";
+import { Model } from "./Model";
 
 interface CardProps{
    imageUrl :  string,
@@ -8,6 +9,7 @@ interface CardProps{
    projectName : string,
    content :  string 
    isBlack : boolean
+   teckStack :string[]
 } 
 
 
@@ -25,6 +27,18 @@ export function ProjectCard( props : CardProps){
                  <div>
                     <div className="m-5 text-4xl font-author font-bold ">{props.projectName}</div>
                     <div className="m-5 text-2xl  font-mono max-w-220  wrap-break-word">{props.content}</div>
+                    <div className="flex flex-wrap gap-3 m-2 ml-5">
+                           <div className=" font-author font-bold text-2xl md:p-2">
+                              TeckStack:  
+                           </div>
+                     {
+                        props.teckStack.map((val , idx)=>{
+                           return(
+                              <div key={idx}><Model text={val} sizeOfLogo="sm" sizeOfText="sm"/></div>
+                           )
+                        })
+                     }
+                    </div>
                     <div className="flex">
                     <a href={props.TrynowLink}  className="m-2 ml-5 text-2xl font-bold font-mono flex hover:cursor-pointer hover:text-purple-800">Try Now <GoArrowUpRight className="m-1"/>  </a>
                     <a href={props.GithubRepo} className="m-2 ml-5 text-2xl font-bold font-mono flex hover:cursor-pointer hover:text-purple-800 ">GitHub<FaGithub className="m-1"/></a>

@@ -46,12 +46,12 @@ export function Certifications({ isBlack }: CertificationsProps) {
     const [paused, setPaused] = useState(false)
 
     return (
-        <div className={`w-full mt-10 px-10 md:px-50 py-16 transition-colors duration-300 overflow-hidden
+        <div className={`w-full mt-10 px-10 md:px-50 py-16 transition-colors duration-300 overflow-hidden  overflow-x-hidden
             ${isBlack ? "bg-black text-white" : "bg-white text-black"}`}>
 
             {/* Heeeeading */}
             <div className="mb-12">
-                <h2 className="font-author font-light text-5xl md:text-7xl">
+                <h2 className="font-author font-light text-4xl md:text-7xl">
                     My <span className="font-extrabold italic text-violet-700">Certifications</span>
                 </h2>
 
@@ -77,7 +77,7 @@ export function Certifications({ isBlack }: CertificationsProps) {
 
                 <div
                     ref={trackRef}
-                    className="flex gap-6"
+                    className="flex gap-6 overflow-hidden"
                     style={{
                         animation: `scroll 25s linear infinite`,
                         animationPlayState: paused ? "paused" : "running",

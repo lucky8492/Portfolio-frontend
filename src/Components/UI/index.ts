@@ -3,7 +3,7 @@
     sizeOfText : "sm" | "md"| "lg",
     sizeOfLogo : "sm" | "md"| "lg",
     text : string,
-    logo : string 
+    logo? : string 
  }
 export const stringSize = {
     "sm": "text-xs",

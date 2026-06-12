@@ -21,9 +21,9 @@ export function Footer( {isBlack}:  changeTheme){
 
     return(
         <div>
-           <div className={`w-full font-mono text-xl font pt-10 flex justify-between  p-4 ${ isBlack ? "text-white" : "text-black"}`}>
+           <div className={`w-full font-mono text-xl font pt-10 flex md:justify-between  p-4 ${ isBlack ? "text-white" : "text-black"}`}>
               You'r {visitor}th visitor   <p>© 2026 Lucky Mishra. All rights reserved.</p>
-              <div className={`flex font-bold gap-2 md:gap-5 hover:cursor-pointer `}>
+              <div className={`md:flex wrap-normal font-bold gap-2 md:gap-5 hover:cursor-pointer `}>
                 Know more: 
                 <a href="https://x.com/secretDOTenv"><FaXTwitter className="hover:scale-105 transition-all duration-200" size={32}/></a>
                 <a href="https://www.linkedin.com/in/lucky8492/"><FaLinkedin className="hover:scale-105 transition-all duration-200" size={32}/></a>
