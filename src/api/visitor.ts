@@ -1,9 +1,9 @@
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-
-
-
-
-export default async function handler(_req: unknown, res: any) {
+export default async function handler(
+  req: VercelRequest,
+  res: VercelResponse
+) {
   try {
     const response = await fetch(
       "https://luckymishra.goatcounter.com/counter/TOTAL.json"
@@ -11,9 +11,10 @@ export default async function handler(_req: unknown, res: any) {
 
     const data = await response.json();
 
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.status(200).json({ count: data.count });
-  } catch {
-    res.status(500).json({ count: 0 });
+    res.status(200).json({
+      count: data.count ?? 0,
+    });
+  } catch (err) {
+    res.status(200).json({ count: 0 });
   }
 }

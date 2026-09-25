@@ -89,7 +89,7 @@ export function Hero({ isDark }: HeroProps) {
               <GoArrowRight className="transition group-hover:translate-x-0.5" />
             </a>
             <a
-              href="/LUCKY_Mishra_r.pdf"
+              href="/LUCKY_RESUME_1.4"
               download
               className={`inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition hover:border-[#9D4EDD]/60 sm:w-auto sm:px-6 ${glassCard} ${textPrimary}`}
             >
