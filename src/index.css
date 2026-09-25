@@ -98,4 +98,28 @@
 
 @theme {
     --font-author: 'Author', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    --color-accent: #9D4EDD;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: var(--font-author), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+#root {
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.hero-handwriting {
+    font-family: 'Segoe Script', 'Brush Script MT', cursive;
+    transform: rotate(-6deg);
 }

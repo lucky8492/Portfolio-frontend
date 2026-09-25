@@ -1,36 +1,25 @@
 import { useState } from "react";
-import { Model } from "../Components/UI/Model";
 import { Navbar } from "../Components/UI/Navbar";
-import { Profile } from "../Components/UI/Profile";
+import { Hero } from "../Components/UI/Hero";
 import { ProjectCard } from "../Components/UI/ProjectCard";
 import LinkShare from "../Components/Images/Link_share.png";
 import couseSeling from "../Components/Images/course-selling.png";
-import todoo from "../Components/Images/todo.jpg";
+import todooo from "../Components/Images/TodoList.png"
 import { Contact } from "../Components/UI/Contact";
 import { Certifications } from "../Components/UI/Certification";
 import { Footer } from "../Components/UI/Footer";
 
 
 export function Home(){
-    const [isWhiteBg , setIsWhiteBg] = useState(false);
+    const [isWhiteBg , setIsWhiteBg] = useState(true);
 
     return(
         <>
-            <div className={`min-h-screen min-w-full ${isWhiteBg ? "bg-black" : "bg-white"}`}>
-                  <div>
+            <div className={`min-h-screen w-full overflow-x-hidden ${isWhiteBg ? "bg-[#050505] text-white" : "bg-white text-black"}`}>
                     <Navbar isWhiteBg={isWhiteBg} setIsWhiteBg={setIsWhiteBg}/>
-                  </div>
-                  <div id="profile">
-                       <Profile isBlack={isWhiteBg}/>
-                  </div>
-
-                    <div className={`flex flex-wrap md:ml-50 ml-10 items-center gap-2 ${isWhiteBg ? "text-white" : "text-black"}`}>
-                        <h3 className="font-author font-light text-4xl md:text-6xl">HI , I'm</h3>
-                        <h3 className="font-author text-purple-700 font-extrabold italic text-4xl ml-3 md:text-6xl">Lucky</h3>
-                        <h3 className="font-author  font-extrabold italic text-4xl md:text-6xl">-</h3>
-                        <h3 className="font-author text-gray-500 font-medium text-3xl md:text-5xl">A Full Stack Web Developer.</h3>
-                    </div>
-                    <div className={`flex flex-wrap items-center md:ml-50 md:mr-10 mr-5 ml-10  gap-2 mt-4 ${isWhiteBg ? "text-white" : "text-black"}`}>
+                    <Hero isDark={isWhiteBg} />
+{/* 
+                    <div className={`mx-auto max-w-7xl flex flex-wrap items-center md:px-10 px-5 md:mr-10 gap-2 mt-4 ${isWhiteBg ? "text-white" : "text-black"}`}>
                         <span className="font-mono font-medium text-xl md:text-3xl">
                           I build modern, high-performance web applications using technologies like
                         </span>
@@ -64,22 +53,29 @@ export function Home(){
                         <span  className="font-mono font-medium text-xl md:mt-10 md:text-3xl ">
                         When I'm not building applications, I spend time solving algorithmic and programming problems in C++, Java, and Python to continuously improve my problem-solving skills.
                         </span>
+                    </div> */}
+                    <div className={`w-full flex justify-center font-bold`}>
+                         <div className=" text-7xl font-mono">
+                            <span className={`${isWhiteBg ? "text-white" : "text-black"}`}>"</span>
+                              <span className="text-[#E5B80B]">Pressure is Privilege</span>
+                             <span className={`${isWhiteBg ? "text-white" : "text-black"}`}>"</span>
+                         </div>
                     </div>
 
-                   <div id="project" className="mt-50 text-white">
-                          <div className="md:ml-50 ml-10 md:mr-10 mr-5">
-                               <span className="text-6xl font-author text-violet-700 font-extrabold">Projects</span>
-                               <div className="mt-15">
+                   <div id="project" className="mt-24 md:mt-32">
+                          <div className="mx-auto max-w-7xl md:px-10 px-5">
+                               <h2 className="text-4xl font-author text-violet-700 font-extrabold sm:text-5xl md:text-6xl">Projects</h2>
+                               <div className="mt-10 sm:mt-12 md:mt-15">
                                     <ProjectCard 
                                         projectName='Save link'
-                                        GithubRepo='https://github.com/lucky8492/Brainly' 
+                                        GithubRepo='https://github.com/lucky8492/Brainly'
                                         TrynowLink='#'
                                         imageUrl={LinkShare} 
                                         teckStack={["Typecipt" ,"JavaScript" , "ReactJs" , "MongoDB" , "Expressjs" ,"Tailwindcss"]}
                                         isBlack={isWhiteBg}
                                         content="Developed a web platform that allows users to organize and store important resources such as links, tweets, YouTube videos, and articles in one centralized place. The application enables users to easily add, manage, and access their saved content, helping them keep useful information structured and accessible. Users can also share their entire collection of saved content with others through a shareable link.Users can also share their entire collection of saved content with others through a shareable link Users can also share their entire collection of saved content with others through a shareable link"  />
                                </div>
-                               <div className="mt-15">
+                               <div className="mt-10 sm:mt-12 md:mt-15">
                                     <ProjectCard 
                                         projectName='Course-selling website'
                                         GithubRepo='https://github.com/lucky8492/Course-selling-website' 
@@ -89,12 +85,12 @@ export function Home(){
                                         isBlack={isWhiteBg}
                                         content="Developed a full-stack course selling platform where users can sign up, log in, browse available courses, and purchase them. The application also includes a separate admin interface that allows administrators to manage courses through complete Create, Read, Update, and Delete (CRUD) operations. The system integrates a responsive frontend with RESTful APIs to enable smooth communication between the client and server, along with secure authentication for both users and admins."  />
                                </div>
-                               <div className="mt-15">
+                               <div className="mt-10 sm:mt-12 md:mt-15">
                                     <ProjectCard 
                                         projectName='Todo'
                                         GithubRepo='https://github.com/lucky8492/Todo.Express' 
                                         TrynowLink='#'
-                                        imageUrl={todoo} 
+                                        imageUrl={todooo} 
                                          teckStack={["JavaScript" , "ReactJs" , "MongoDB" , "Expressjs" , "Tailwindcss"]}
                                         isBlack={isWhiteBg}
                                         content="Developed a full-stack Todo application that allows users to sign up, log in, and manage their personal tasks efficiently. The platform enables users to create, view, update, and delete tasks, helping them organize their daily activities in a structured way. The application integrates a responsive frontend with backend APIs and includes authentication to ensure that each user can securely access and manage their own tasks."  />

@@ -13,6 +13,7 @@ export function Buttonss(props :buttonIdx){
                 </div>
           </div>
 
+          
        </div>
    )
 }

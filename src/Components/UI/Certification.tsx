@@ -3,6 +3,7 @@ import DeloitteCertificate from "../Images/Deloitte.jpg"
 import CMDBCertificate from "../Images/CMDB.jpg"
 import UnstopCertificate from "../Images/Unstop.jpg"
 import AzureCertificate from "../Images/Microsof_Azure.png"
+import SalesforceCertificate from "../Images/Salesforce.png"
 
 interface Certificate {
     name: string
@@ -35,6 +36,11 @@ const certificates: Certificate[] = [
         issuer: "Microsoft",
         image:`${AzureCertificate}`
     },
+    {
+      name : "Salesforce Platform Developer - I",
+      issuer : "Salesforce",
+      image :`${SalesforceCertificate}`
+    },
     
 ]
 
@@ -46,12 +52,12 @@ export function Certifications({ isBlack }: CertificationsProps) {
     const [paused, setPaused] = useState(false)
 
     return (
-        <div className={`w-full mt-10 px-10 md:px-50 py-16 transition-colors duration-300 overflow-hidden  overflow-x-hidden
+        <div className={`mx-auto mt-10 w-full max-w-7xl overflow-x-hidden px-4 py-12 transition-colors duration-300 sm:px-6 md:px-8 md:py-16 lg:px-12
             ${isBlack ? "bg-black text-white" : "bg-white text-black"}`}>
 
             {/* Heeeeading */}
             <div className="mb-12">
-                <h2 className="font-author font-light text-4xl md:text-7xl">
+                <h2 className="font-author text-3xl font-light sm:text-4xl md:text-6xl lg:text-7xl">
                     My <span className="font-extrabold italic text-violet-700">Certifications</span>
                 </h2>
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { FiArrowRight } from "react-icons/fi";
 
 interface ContactProps {
   isBlack: boolean;
@@ -62,14 +63,13 @@ export function Contact({ isBlack }: ContactProps) {
         setErrorMessage("Unexpected error occurred");
         setSubmitted(true);
       }
-    }finally {
-        setFormData({
-            name: "",
-            email: "",
-            message: "",
-        });
+    } finally {
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
     }
-
 
     setTimeout(() => {
       setSubmitted(false);
@@ -78,34 +78,49 @@ export function Contact({ isBlack }: ContactProps) {
 
   return (
     <div
-      className={`w-full px-10 md:px-50 py-10 transition-colors duration-300 ${
+      className={`relative mx-auto w-full max-w-7xl overflow-hidden px-4 py-16 transition-colors duration-300 sm:px-6 md:px-8 lg:px-12 lg:py-24 ${
         isBlack ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
       {/* Heading */}
-      <div className="mb-10">
-        <h2 className="font-author font-light text-5xl md:text-7xl">
+      <div className="relative z-10 mx-auto mb-10 max-w-2xl text-center">
+        <span
+          className={`mb-5 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 font-mono text-xs font-semibold tracking-widest uppercase ${
+            isBlack
+              ? "border-white/10 bg-white/5 text-gray-300"
+              : "border-black/10 bg-black/5 text-gray-600"
+          }`}
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />
+          Let's Talk
+        </span>
+
+        <h2 className="font-author text-4xl font-extrabold sm:text-5xl md:text-6xl">
           Get in{" "}
-          <span className="font-extrabold italic text-violet-700">
+          <span className="bg-gradient-to-r from-violet-500 to-purple-400 bg-clip-text text-transparent">
             Touch
           </span>
         </h2>
 
-        <p className="font-mono text-md md:ml-3 mt-1">
-          Have a project in mind? Let's talk.
+        <p
+          className={`mt-4 font-mono text-sm sm:text-base ${
+            isBlack ? "text-gray-400" : "text-gray-600"
+          }`}
+        >
+          Have a project in mind? Let's build something meaningful together.
         </p>
       </div>
 
       {/* Form Container */}
       <div
-        className={`max-w-2xl mx-auto rounded-2xl p-8 transition-colors duration-300 ${
+        className={`relative z-10 mx-auto max-w-2xl rounded-2xl p-5 transition-colors duration-300 sm:p-6 md:p-8 ${
           isBlack
-            ? "border border-gray-700"
-            : "border-gray-800 shadow-2xl bg-gray-100"
+            ? "border border-white/10 bg-white/[0.02]"
+            : "border border-gray-200 bg-gray-50 shadow-xl"
         }`}
       >
         {submitted ? (
-          <div className="flex flex-col items-center justify-center py-12 gap-4">
+          <div className="flex flex-col items-center justify-center gap-4 py-12">
             <div
               className={`text-5xl ${
                 isValid ? "text-green-500" : "text-red-500"
@@ -129,10 +144,10 @@ export function Contact({ isBlack }: ContactProps) {
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             {/* Name */}
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-2">
               <label
-                className={`font-mono text-xl tracking-widest uppercase ${
-                  isBlack ? "text-white" : "text-gray-700"
+                className={`font-mono text-xs font-semibold tracking-widest uppercase ${
+                  isBlack ? "text-gray-300" : "text-gray-700"
                 }`}
               >
                 Name
@@ -144,22 +159,22 @@ export function Contact({ isBlack }: ContactProps) {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="Lucky Mishra"
-                className={`rounded-xl px-6 py-7 font-mono text-sm outline-none border transition-all duration-200
+                placeholder="Your name"
+                className={`rounded-xl border px-4 py-3.5 font-mono text-sm outline-none transition-all duration-200
                 focus:border-violet-500 focus:ring-1 focus:ring-violet-500
                 ${
                   isBlack
-                    ? "bg-black border-gray-700 text-white placeholder-gray-600"
-                    : "bg-white border-gray-300 text-black placeholder-gray-400"
+                    ? "border-white/10 bg-white/[0.03] text-white placeholder-gray-600"
+                    : "border-gray-300 bg-white text-black placeholder-gray-400"
                 }`}
               />
             </div>
 
             {/* Email */}
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-2">
               <label
-                className={`font-mono text-xl tracking-widest uppercase ${
-                  isBlack ? "text-white" : "text-gray-700"
+                className={`font-mono text-xs font-semibold tracking-widest uppercase ${
+                  isBlack ? "text-gray-300" : "text-gray-700"
                 }`}
               >
                 Email
@@ -171,22 +186,22 @@ export function Contact({ isBlack }: ContactProps) {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="lucky@example.com"
-                className={`rounded-xl px-6 py-7 font-mono text-sm outline-none border transition-all duration-200
+                placeholder="you@example.com"
+                className={`rounded-xl border px-4 py-3.5 font-mono text-sm outline-none transition-all duration-200
                 focus:border-violet-500 focus:ring-1 focus:ring-violet-500
                 ${
                   isBlack
-                    ? "bg-black border-gray-700 text-white placeholder-gray-600"
-                    : "bg-white border-gray-300 text-black placeholder-gray-400"
+                    ? "border-white/10 bg-white/[0.03] text-white placeholder-gray-600"
+                    : "border-gray-300 bg-white text-black placeholder-gray-400"
                 }`}
               />
             </div>
 
             {/* Message */}
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-2">
               <label
-                className={`font-mono text-xl tracking-widest uppercase ${
-                  isBlack ? "text-white" : "text-gray-700"
+                className={`font-mono text-xs font-semibold tracking-widest uppercase ${
+                  isBlack ? "text-gray-300" : "text-gray-700"
                 }`}
               >
                 Message
@@ -199,26 +214,24 @@ export function Contact({ isBlack }: ContactProps) {
                 required
                 rows={5}
                 placeholder="Tell me about your project..."
-                className={`rounded-xl md:px-8 md:py-9 font-mono text-md outline-none border transition-all duration-200 resize-none
+                className={`resize-none rounded-xl border px-4 py-3.5 font-mono text-sm outline-none transition-all duration-200
                 focus:border-violet-500 focus:ring-1 focus:ring-violet-500
                 ${
                   isBlack
-                    ? "bg-black border-gray-700 text-white placeholder-gray-600"
-                    : "bg-white border-gray-300 text-black placeholder-gray-400"
+                    ? "border-white/10 bg-white/[0.03] text-white placeholder-gray-600"
+                    : "border-gray-300 bg-white text-black placeholder-gray-400"
                 }`}
               />
             </div>
 
             <button
               type="submit"
-              className={`mt-2 py-3 px-8 rounded-xl font-mono text-sm tracking-widest uppercase
-              transition-all duration-300 cursor-pointer self-center
-              border border-violet-500
-              ${isBlack ? "text-white" : "text-black"}
-              hover:bg-violet-500 hover:text-white hover:scale-105
-              active:scale-95`}
+              className="mt-2 flex items-center justify-center gap-2 self-center rounded-xl bg-gradient-to-r from-violet-600 to-purple-500 px-8 py-3.5 font-author text-sm font-bold tracking-wide text-white
+              transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-violet-500/30
+              active:scale-95"
             >
               Send Message
+              <FiArrowRight />
             </button>
           </form>
         )}
