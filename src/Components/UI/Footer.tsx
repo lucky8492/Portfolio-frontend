@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaXTwitter, FaLinkedin, FaInstagram } from "react-icons/fa6";
+import { FaXTwitter, FaLinkedin } from "react-icons/fa6";
 import { BsGithub } from "react-icons/bs";
 import { SiGmail, SiCodechef, SiGeeksforgeeks } from "react-icons/si";
 
@@ -21,7 +21,6 @@ export function Footer({ isBlack }: ChangeTheme) {
     { href: "https://x.com/secretDOTenv", icon: FaXTwitter },
     { href: "https://www.linkedin.com/in/lucky8492/", icon: FaLinkedin },
     { href: "https://github.com/lucky8492", icon: BsGithub },
-    { href: "https://www.instagram.com/__lucky__here__/", icon: FaInstagram },
     { href: "mailto:luckymishra0606@gmail.com", icon: SiGmail },
     { href: "https://www.codechef.com/users/lucky8492", icon: SiCodechef },
     {
