@@ -38,7 +38,7 @@ const navLinks: NavLink[] = [
 
   { href: "#certificate", label: "Certificates" },
 
-  { href: "../../../public/LUCKY_RESUME_ONLINE.pdf", label: "Resume", download: true },
+  { href: "/LUCKY_RESUME_ONLINE.pdf", label: "Resume", download: true },
 
   { href: "#contact", label: "Contact" },
 
