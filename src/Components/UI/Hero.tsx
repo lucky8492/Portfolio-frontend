@@ -8,7 +8,7 @@ import {
   SiTypescript,
 } from "react-icons/si"
 import { GoArrowRight, GoDownload } from "react-icons/go"
-import ProfilePhoto from "../Images/Profile_photo.jpg"
+import ProfilePhoto from "../Images/PP.jpg"
 
 interface HeroProps {
   isDark: boolean
@@ -89,7 +89,7 @@ export function Hero({ isDark }: HeroProps) {
               <GoArrowRight className="transition group-hover:translate-x-0.5" />
             </a>
             <a
-              href="/LUCKY_RESUME_1.4"
+              href="../../../public/LUCKY_RESUME_ONLINE.pdf"
               download
               className={`inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition hover:border-[#9D4EDD]/60 sm:w-auto sm:px-6 ${glassCard} ${textPrimary}`}
             >
@@ -168,9 +168,7 @@ export function Hero({ isDark }: HeroProps) {
                 {"}"}
               </code>
             </pre>
-            <p className={`mt-2 text-right text-[9px] tracking-wide sm:mt-3 sm:text-[10px] ${textMuted}`}>
-              Clean Code · Scalable Products · Better Tomorrow
-            </p>
+
           </div>
         </div>
       </div>
